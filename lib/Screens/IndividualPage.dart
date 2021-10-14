@@ -43,7 +43,7 @@ class _IndividualPageState extends State<IndividualPage> {
 
   void connect() {
     // MessageModel messageModel = MessageModel(sourceId: widget.sourceChat.id.toString(),targetId: );
-    socket = IO.io("http://192.168.0.106:5000", <String, dynamic>{
+    socket = IO.io("http://192.168.1.2:5000", <String, dynamic>{
       "transports": ["websocket"],
       "autoConnect": false,
     });
@@ -73,7 +73,7 @@ class _IndividualPageState extends State<IndividualPage> {
         message: message,
         time: DateTime.now().toString().substring(10, 16));
     print(messages);
-
+    print(DateTime.now());
     setState(() {
       messages.add(messageModel);
     });
